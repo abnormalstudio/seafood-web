@@ -1,3 +1,18 @@
 {
-  "presets": ["next/babel", "@zeit/next-typescript/babel"]
+  "presets": ["next/babel", "@zeit/next-typescript/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@components": "./components",
+          "@queries": "./queries",
+          "@settings": "./settings",
+          "@utils": "./utils",
+          "@types": "./types"
+        }
+      }
+    ]
+  ]
 }
