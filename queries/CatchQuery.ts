@@ -6,10 +6,23 @@ const CatchQuery = gql`
       id
       latitude
       longitude
+      caughtOn
+      location
       fish {
         id
+        species
         mercuryMeanPpm
         mercuryNumSamples
+        nutrients(first: 50) {
+          edges {
+            node {
+              name
+              group
+              unit
+              value
+            }
+          }
+        }
       }
       fishery {
         id

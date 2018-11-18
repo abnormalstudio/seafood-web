@@ -1,15 +1,16 @@
-import { Fragment } from "react";
-import Head from "next/head";
-import { Layout } from "@components";
+import { withRouter } from "next/router";
+import { Layout, Catch } from "@components";
 
-export default () => (
+type Props = {
+  router: {
+    query: {
+      id: string;
+    };
+  };
+};
+
+export default withRouter(({ router }: Props) => (
   <Layout>
-    <Head>
-      <title>Seafood Transparency Project - Catch</title>
-    </Head>
-    <Fragment>
-      <h1>Catch</h1>
-      <p>You've caught a fish!</p>
-    </Fragment>
+    <Catch id={router.query.id} />
   </Layout>
-);
+));

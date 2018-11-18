@@ -3,6 +3,8 @@ import Link from "next/link";
 
 const NavTag = styled("nav")`
   width: 20%;
+  min-width: 200px;
+  background-image: linear-gradient(to bottom, #f26f10, #c10e9e);
 `;
 
 export default function Nav() {

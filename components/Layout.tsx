@@ -11,6 +11,8 @@ type Props = {
 
 const Container = styled("div")`
   display: flex;
+  background-color: #1b1d21;
+  min-height: 100vh;
 `;
 
 export default function Layout({ children }: Props) {

@@ -32,7 +32,7 @@ const authLink = setContext((_, oldContext) => {
 });
 
 const batchLink = new BatchHttpLink({
-  uri: "https://flipgive-api.dev:9283/graphql",
+  uri: "http://localhost:3000/graphql",
   fetch
 });
 

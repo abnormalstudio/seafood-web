@@ -18,11 +18,13 @@
     "graphql-tag": "^2.10.0",
     "immer": "^1.7.4",
     "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.22.2",
     "next": "^7.0.2",
     "react": "^16.7.0-alpha.2",
     "react-apollo": "^2.3.1",
     "react-dom": "^16.7.0-alpha.2",
-    "react-emotion": "^9.2.12"
+    "react-emotion": "^9.2.12",
+    "react-map-gl": "^4.0.2"
   },
   "scripts": {
     "dev": "PORT=4000 node server.js",
