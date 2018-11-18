@@ -11,6 +11,7 @@ import {
   CatchHeader
 } from "@components";
 import { colors, sizes } from "@settings";
+import { StatBox, Centered } from "@elements";
 
 type Props = {
   id: string;
@@ -43,21 +44,8 @@ const SplitStatBox = styled("div")`
   width: calc(50% - 5px);
 `;
 
-const StatBox = styled("div")`
-  border: 2px solid ${colors.dark};
-  padding: 10px;
-  margin: 0 auto;
-  margin-bottom: ${sizes.mM};
-  width: 80%;
-`;
-
 const MapContainer = styled("div")`
   margin-bottom: ${sizes.mM};
-`;
-
-const Centered = styled("div")`
-  text-align: center;
-  font-weight: bold;
 `;
 
 export default function Catch({ id }: Props) {
@@ -107,9 +95,7 @@ export default function Catch({ id }: Props) {
               />
             </MapContainer>
 
-            <StatBox>
-              <NutrientTable nutrients={nutrients} />
-            </StatBox>
+            <NutrientTable nutrients={nutrients} />
           </CatchContainer>
         );
       }}

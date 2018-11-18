@@ -21,7 +21,8 @@
       "@components": ["components"],
       "@settings": ["settings"],
       "@types": ["types"],
-      "@utils": ["utils"]
+      "@utils": ["utils"],
+      "@elements": ["elements"]
     }
   }
 }

@@ -10,7 +10,8 @@
           "@queries": "./queries",
           "@settings": "./settings",
           "@utils": "./utils",
-          "@types": "./types"
+          "@types": "./types",
+          "@elements": "./elements"
         }
       }
     ]
