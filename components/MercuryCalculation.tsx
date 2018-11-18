@@ -1,3 +1,4 @@
+import styled from "react-emotion";
 import React from "react";
 
 /*
@@ -24,6 +25,19 @@ type Props = {
   mercuryMeanPpm: number;
 };
 
+const Label = styled("label")`
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+`;
+
+const Input = styled("input")`
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 5px;
+  width: 60px;
+`;
+
 export default class MercuryCalculation extends React.Component<Props> {
   state = {
     kilos: 65
@@ -42,15 +56,22 @@ export default class MercuryCalculation extends React.Component<Props> {
 
     return (
       <div>
-        <input
-          type="text"
-          defaultValue={String(kilos)}
-          onChange={this.handleChange}
-        />
+        <div>
+          <Label htmlFor="kilos">
+            Your weight
+            <Input
+              id="kilos"
+              type="number"
+              defaultValue={String(kilos)}
+              onChange={this.handleChange}
+            />
+            kg
+          </Label>
+        </div>
         <p>
-          {species} contains on average {mercuryMeanPpm * 200}µg of mercury per
-          200g serving. An adult weighing {kilos} kilos can safely consume{" "}
-          {mercuryPerWeek(kilos)}
+          {species} contains on average {(mercuryMeanPpm * 200).toFixed(1)}µg of
+          mercury per 200g serving. An adult weighing {kilos} kilos can safely
+          consume {mercuryPerWeek(kilos).toFixed(1)}
           µg of mercury per week. This allows for{" "}
           {servingsPerWeek(kilos, mercuryMeanPpm, 200).toFixed(1)} servings of{" "}
           {species} per week.

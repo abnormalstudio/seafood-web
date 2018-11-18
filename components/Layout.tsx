@@ -4,6 +4,7 @@ import { ApolloProvider } from "react-apollo";
 import styled from "react-emotion";
 import { apolloClient } from "@utils";
 import { Nav } from "@components";
+import { colors } from "@settings";
 
 type Props = {
   children: ReactNode;
@@ -11,7 +12,8 @@ type Props = {
 
 const Container = styled("div")`
   display: flex;
-  background-color: #1b1d21;
+  color: ${colors.dark};
+  background-color: ${colors.white};
   min-height: 100vh;
 `;
 
@@ -69,5 +71,24 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+`;
+
+injectGlobal`
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 18px;
+	font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Francois One', sans-serif;
+}
+
+h1 {
+	font-size: 2rem;
 }
 `;

@@ -4,6 +4,31 @@ import moment from "moment";
 import produce from "immer";
 import styled from "react-emotion";
 import { IScan } from "@types";
+import { sizes } from "@settings";
+
+function getDistanceFromLatLonInKm(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+): number {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2 - lat1); // deg2rad below
+  var dLon = deg2rad(lon2 - lon1);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) *
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c; // Distance in km
+  return d;
+}
+
+function deg2rad(deg: number): number {
+  return deg * (Math.PI / 180);
+}
 
 const token =
   "pk.eyJ1IjoibGVpZ2hoYWxsaWRheSIsImEiOiJjajR2bzNhcHkweHdyMzJucnpodm5zc2h5In0.Vj2bGQOYqTTgDInlXD27Xg";
@@ -72,6 +97,11 @@ type MarkerData = {
   text: string;
 };
 
+const FishTravel = styled("p")`
+  width: 80%;
+  margin: ${sizes.mS} auto;
+`;
+
 export default class CatchMap extends React.Component<Props> {
   state = {
     viewport: {
@@ -87,7 +117,8 @@ export default class CatchMap extends React.Component<Props> {
       dragPan: true,
       dragRotate: true,
       scrollZoom: true,
-      touchZoomRotate: true,
+      touchZoom: true,
+      touchRotate: true,
       doubleClickZoom: true,
       minZoom: 0,
       maxZoom: 20,
@@ -180,12 +211,26 @@ export default class CatchMap extends React.Component<Props> {
           {userLocation &&
             this.renderMarker({
               text: "Your location",
-              time: moment().format("YYYY-MM-DD"),
+              time: moment().format(),
               latitude: userLocation.latitude,
               longitude: userLocation.longitude,
               markerType: "user"
             })}
         </MapGL>
+        {userLocation && (
+          <FishTravel>
+            Your fish travelled{" "}
+            {Math.floor(
+              getDistanceFromLatLonInKm(
+                origin.latitude,
+                origin.longitude,
+                userLocation.latitude,
+                userLocation.longitude
+              )
+            )}
+            km to be with you today.
+          </FishTravel>
+        )}
       </div>
     );
   }
