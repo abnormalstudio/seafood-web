@@ -8,5 +8,19 @@
         "maxLambdaSize": "20mb"
       }
     }
+  ],
+  "routes": [
+    {
+      "src": "/our-team",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/catch/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    }
   ]
 }
