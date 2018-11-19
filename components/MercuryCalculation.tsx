@@ -1,5 +1,6 @@
 import styled from "react-emotion";
 import React from "react";
+import { sizes, colors } from "@settings";
 
 /*
 Research from:
@@ -28,7 +29,7 @@ type Props = {
 const Label = styled("label")`
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: ${sizes.mS};
 `;
 
 const Input = styled("input")`
@@ -36,6 +37,7 @@ const Input = styled("input")`
   margin: 0px 5px;
   padding: 5px;
   width: 60px;
+  border: 1px solid ${colors.dark};
 `;
 
 export default class MercuryCalculation extends React.Component<Props> {
@@ -58,14 +60,14 @@ export default class MercuryCalculation extends React.Component<Props> {
       <div>
         <div>
           <Label htmlFor="kilos">
-            Your weight
+            YOUR WEIGHT IS
             <Input
               id="kilos"
               type="number"
               defaultValue={String(kilos)}
               onChange={this.handleChange}
             />
-            kg
+            KG
           </Label>
         </div>
         <p>

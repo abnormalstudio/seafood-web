@@ -39,15 +39,15 @@ const markerStyle = `
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: #18FFFF;
+  background: #0080ff;
   border-radius: 10px;
   margin: 0 8px;
 }
 .spot.origin:before {
-  background: red;
+  background: #FF5A09;
 }
 .spot.user:before {
-  background: yellow;
+  background: #ffc952;
 }
 .spot {
   border-radius: 20px;
@@ -198,7 +198,7 @@ export default class CatchMap extends React.Component<Props> {
           <MapGL
             {...viewport}
             {...settings}
-            mapStyle="mapbox://styles/leighhalliday/cjoma99931oam2rmklyn05kil"
+            mapStyle="mapbox://styles/leighhalliday/cjonoi60v08372spkwmnf4bez"
             onViewportChange={this.onViewportChange}
             mapboxApiAccessToken={token}
           >

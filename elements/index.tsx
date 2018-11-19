@@ -7,6 +7,7 @@ export const StatBox = styled("div")`
   margin: 0 auto;
   margin-bottom: ${sizes.mL};
   width: 80%;
+  line-height: 1.7rem;
 `;
 
 export const Centered = styled("div")`

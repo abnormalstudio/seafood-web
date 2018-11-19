@@ -7,25 +7,26 @@ import { colors } from "@settings";
 type Props = {
   children: ReactNode;
   navTop?: ReactNode;
+  backgroundColor?: string;
 };
 
 const Container = styled("div")`
   display: flex;
-  color: ${colors.dark};
-  background-color: ${colors.white};
   min-height: 100vh;
 `;
 
 const Main = styled("main")`
-  margin-left: 275px;
+  position: relative;
+  width: 100%;
+  margin-left: 225px;
 `;
 
-export default function Layout({ children, navTop }: Props) {
+export default function Layout({ children, navTop, backgroundColor }: Props) {
   return (
     <Container>
       <Nav navTop={navTop} />
       <Main>{children}</Main>
-      <Logo />
+      <Logo backgroundColor={backgroundColor} />
     </Container>
   );
 }
@@ -84,6 +85,8 @@ injectGlobal`
 body {
 	font-size: 18px;
 	font-family: 'Fira Sans Condensed', sans-serif;
+	background-color: ${colors.white};
+	color: ${colors.dark};
 }
 
 h1,h2,h3,h4,h5,h6 {

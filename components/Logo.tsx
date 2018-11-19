@@ -6,8 +6,8 @@ const LogoWrapper = styled("div")`
   top: 45px;
   right: 45px;
   z-index: 10;
-  background-color: ${colors.white};
   display: flex;
+  background-color: ${props => props.backgroundColor || "transparent"};
 `;
 
 const ImageWrapper = styled("div")`
@@ -26,20 +26,24 @@ const Dark = styled("div")`
   font-weight: bold;
 `;
 
-const Green = styled("div")`
-  color: ${colors.green};
+const Black = styled("div")`
+  color: ${colors.black};
   font-weight: bold;
 `;
 
-export default function Logo() {
+type Props = {
+  backgroundColor?: string;
+};
+
+export default function Logo({ backgroundColor }: Props) {
   return (
-    <LogoWrapper>
+    <LogoWrapper backgroundColor={backgroundColor}>
       <ImageWrapper>
         <JellyImage src="/static/jellyfish.svg" alt="Jelly Fish" />
       </ImageWrapper>
       <Text>
         <Dark>THE SEAFOOD</Dark>
-        <Green>TRANSPARENCY</Green>
+        <Black>TRANSPARENCY</Black>
         <Dark>PROJECT</Dark>
       </Text>
     </LogoWrapper>

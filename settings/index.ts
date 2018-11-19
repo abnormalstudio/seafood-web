@@ -1,8 +1,9 @@
 export const colors = {
   orange: "#f79119",
   white: "#FFFFFF",
-  dark: "#1b1d21",
-  green: "#0BFAC3"
+  dark: "#696D7D",
+  green: "#0BFAC3",
+  black: "#000000"
 };
 
 export const sizes = {

@@ -27,9 +27,15 @@ const ReportLink = styled("a")`
   display: inline-block;
   padding: ${sizes.mS};
   color: ${colors.green};
-  background-color: ${colors.dark};
+  background-color: ${colors.black};
   text-decoration: none;
   font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: box-shadow 0.5s;
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
 `;
 
 export default function CatchNav({ id }: Props) {

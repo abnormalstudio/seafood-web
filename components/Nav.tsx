@@ -7,8 +7,8 @@ const NavTag = styled("nav")`
   position: fixed;
   top: 0px;
   bottom: 0px;
-  width: 275px;
-  background-image: linear-gradient(to bottom, #f26f10, #c10e9e);
+  width: 225px;
+  background-color: #f2c640;
 `;
 
 const Ul = styled("ul")`

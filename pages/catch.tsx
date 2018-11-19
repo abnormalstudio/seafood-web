@@ -35,7 +35,7 @@ export default withRouter(({ router }: Props) => (
           const navTop = <CatchNav id={router.query.id} />;
 
           return (
-            <Layout navTop={navTop}>
+            <Layout navTop={navTop} backgroundColor="#FFF">
               <Catch catchData={data.catch} />
             </Layout>
           );

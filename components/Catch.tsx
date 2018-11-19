@@ -26,6 +26,7 @@ const SplitBox = styled("div")`
   width: 80%;
   margin: 0 auto;
   margin-bottom: ${sizes.mL};
+  line-height: 1.7rem;
 `;
 
 const SplitStatBox = styled("div")`
@@ -52,11 +53,11 @@ export default function Catch({ catchData }: Props) {
 
       <SplitBox>
         <SplitStatBox>
-          Origin
+          ORIGIN
           <Centered>{location}</Centered>
         </SplitStatBox>
         <SplitStatBox>
-          Date Caught
+          DATE CAUGHT
           <Centered>
             {moment(catchData.caughtOn).format("MMM Do, YYYY")}
           </Centered>
