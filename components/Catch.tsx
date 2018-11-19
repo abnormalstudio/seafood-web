@@ -40,7 +40,7 @@ const MapContainer = styled("div")`
 `;
 
 export default function Catch({ catchData }: Props) {
-  const { location, fish, latitude, longitude, caughtOn } = catchData;
+  const { location, fish, latitude, longitude, caughtOn, fishery } = catchData;
   const scans = catchData.scans.edges.map(edge => edge.node);
   const nutrients = fish.nutrients.edges.map(edge => edge.node);
   return (
@@ -60,6 +60,21 @@ export default function Catch({ catchData }: Props) {
           DATE CAUGHT
           <Centered>
             {moment(catchData.caughtOn).format("MMM Do, YYYY")}
+          </Centered>
+        </SplitStatBox>
+      </SplitBox>
+
+      <SplitBox>
+        <SplitStatBox>
+          FISHERY
+          <Centered>{fishery.name}</Centered>
+        </SplitStatBox>
+        <SplitStatBox>
+          CONTACT
+          <Centered>
+            {fishery.contact}
+            <br />
+            {fishery.address}
           </Centered>
         </SplitStatBox>
       </SplitBox>
