@@ -102,6 +102,14 @@ const FishTravel = styled("p")`
   margin: ${sizes.mS} auto;
 `;
 
+const MapWrapper = styled("div")`
+  margin-bottom: ${sizes.mL};
+`;
+
+const MapContainer = styled("div")`
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+`;
+
 export default class CatchMap extends React.Component<Props> {
   state = {
     viewport: {
@@ -185,38 +193,40 @@ export default class CatchMap extends React.Component<Props> {
     const { origin, scans } = this.props;
 
     return (
-      <div>
-        <MapGL
-          {...viewport}
-          {...settings}
-          mapStyle="mapbox://styles/leighhalliday/cjoma99931oam2rmklyn05kil"
-          onViewportChange={this.onViewportChange}
-          mapboxApiAccessToken={token}
-        >
-          <style>{markerStyle}</style>
-          {this.renderMarker({
-            ...origin,
-            markerType: "origin",
-            text: "Origin"
-          })}
-          {scans.map(scan =>
-            this.renderMarker({
-              text: scan.scanner,
-              time: scan.scannedAt,
-              latitude: scan.latitude,
-              longitude: scan.longitude,
-              markerType: "scan"
-            })
-          )}
-          {userLocation &&
-            this.renderMarker({
-              text: "Your location",
-              time: moment().format(),
-              latitude: userLocation.latitude,
-              longitude: userLocation.longitude,
-              markerType: "user"
+      <MapWrapper>
+        <MapContainer>
+          <MapGL
+            {...viewport}
+            {...settings}
+            mapStyle="mapbox://styles/leighhalliday/cjoma99931oam2rmklyn05kil"
+            onViewportChange={this.onViewportChange}
+            mapboxApiAccessToken={token}
+          >
+            <style>{markerStyle}</style>
+            {this.renderMarker({
+              ...origin,
+              markerType: "origin",
+              text: "Origin"
             })}
-        </MapGL>
+            {scans.map(scan =>
+              this.renderMarker({
+                text: scan.scanner,
+                time: scan.scannedAt,
+                latitude: scan.latitude,
+                longitude: scan.longitude,
+                markerType: "scan"
+              })
+            )}
+            {userLocation &&
+              this.renderMarker({
+                text: "Your location",
+                time: moment().format(),
+                latitude: userLocation.latitude,
+                longitude: userLocation.longitude,
+                markerType: "user"
+              })}
+          </MapGL>
+        </MapContainer>
         {userLocation && (
           <FishTravel>
             Your fish travelled{" "}
@@ -231,7 +241,7 @@ export default class CatchMap extends React.Component<Props> {
             km to be with you today.
           </FishTravel>
         )}
-      </div>
+      </MapWrapper>
     );
   }
 }

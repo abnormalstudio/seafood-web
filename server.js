@@ -23,6 +23,10 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
+    server.get("/our-work", (req, res) => {
+      app.render(req, res, "/ourWork", {});
+    });
+
     server.get("*", (req, res) => {
       return handle(req, res);
     });

@@ -5,7 +5,7 @@ export const StatBox = styled("div")`
   border: 2px solid ${colors.dark};
   padding: 10px;
   margin: 0 auto;
-  margin-bottom: ${sizes.mM};
+  margin-bottom: ${sizes.mL};
   width: 80%;
 `;
 

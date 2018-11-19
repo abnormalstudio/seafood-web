@@ -1,13 +1,12 @@
 import { ReactNode } from "react";
 import { injectGlobal } from "emotion";
-import { ApolloProvider } from "react-apollo";
 import styled from "react-emotion";
-import { apolloClient } from "@utils";
-import { Nav } from "@components";
+import { Nav, Logo } from "@components";
 import { colors } from "@settings";
 
 type Props = {
   children: ReactNode;
+  navTop?: ReactNode;
 };
 
 const Container = styled("div")`
@@ -17,14 +16,17 @@ const Container = styled("div")`
   min-height: 100vh;
 `;
 
-export default function Layout({ children }: Props) {
+const Main = styled("main")`
+  margin-left: 275px;
+`;
+
+export default function Layout({ children, navTop }: Props) {
   return (
-    <ApolloProvider client={apolloClient}>
-      <Container>
-        <Nav />
-        <main>{children}</main>
-      </Container>
-    </ApolloProvider>
+    <Container>
+      <Nav navTop={navTop} />
+      <Main>{children}</Main>
+      <Logo />
+    </Container>
   );
 }
 

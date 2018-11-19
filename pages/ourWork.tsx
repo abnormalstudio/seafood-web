@@ -6,10 +6,10 @@ export default () => (
   <SeafoodApp>
     <Layout>
       <Head>
-        <title>About - Seafood Transparency Project</title>
+        <title>Our Work - Seafood Transparency Project</title>
       </Head>
       <Fragment>
-        <h1>About</h1>
+        <h1>Our Work</h1>
         <p>
           You're on the right page to find out about the Seafood Transparency
           Project.

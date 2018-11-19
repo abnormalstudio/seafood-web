@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
 import Router from "next/router";
-import { Layout } from "@components";
+import { SeafoodApp, Layout } from "@components";
 
 export default class Index extends React.Component {
   private codeInput: React.RefObject<HTMLInputElement>;
@@ -21,18 +21,20 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <Head>
-          <title>Seafood Transparency Project</title>
-        </Head>
-        <Fragment>
-          <h1>Seafood Transparency Project</h1>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" ref={this.codeInput} />
-            <button type="submit">Search</button>
-          </form>
-        </Fragment>
-      </Layout>
+      <SeafoodApp>
+        <Layout>
+          <Head>
+            <title>Seafood Transparency Project</title>
+          </Head>
+          <Fragment>
+            <h1>Seafood Transparency Project</h1>
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" ref={this.codeInput} />
+              <button type="submit">Search</button>
+            </form>
+          </Fragment>
+        </Layout>
+      </SeafoodApp>
     );
   }
 }

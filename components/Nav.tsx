@@ -1,27 +1,77 @@
+import { ReactNode } from "react";
 import styled from "react-emotion";
 import Link from "next/link";
+import { colors, sizes } from "@settings";
 
 const NavTag = styled("nav")`
-  width: 20%;
-  min-width: 200px;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  width: 275px;
   background-image: linear-gradient(to bottom, #f26f10, #c10e9e);
 `;
 
-export default function Nav() {
+const Ul = styled("ul")`
+  position: absolute;
+  bottom: 15px;
+  padding: ${sizes.mM};
+  width: 100%;
+`;
+
+const Li = styled("li")`
+  width: 50%;
+  min-width: 175px;
+  margin: 0 auto;
+  margin-bottom: ${sizes.mM};
+`;
+
+const NavA = styled("a")`
+  font-size: 1.5rem;
+  color: ${colors.white};
+  text-transform: uppercase;
+  cursor: pointer;
+`;
+
+const NavImage = styled("img")`
+  width: 20px;
+  margin-right: 5px;
+`;
+
+type Props = {
+  navTop?: ReactNode;
+};
+
+export default function Nav({ navTop }: Props) {
   return (
     <NavTag>
-      <ul>
-        <li>
+      {navTop}
+
+      <Ul>
+        <Li>
           <Link href="/">
-            <a>Home</a>
+            <NavA>
+              <NavImage src="/static/home.svg" alt="Home" />
+              Home
+            </NavA>
           </Link>
-        </li>
-        <li>
+        </Li>
+        <Li>
           <Link href="/about">
-            <a>About</a>
+            <NavA>
+              <NavImage src="/static/about.svg" alt="About" />
+              About
+            </NavA>
           </Link>
-        </li>
-      </ul>
+        </Li>
+        <Li>
+          <Link href="/our-work">
+            <NavA>
+              <NavImage src="/static/team.svg" alt="Our Work" />
+              Our Work
+            </NavA>
+          </Link>
+        </Li>
+      </Ul>
     </NavTag>
   );
 }
