@@ -22,7 +22,7 @@ const configs = {
     apiUrl: "http://localhost:3000/graphql"
   },
   production: {
-    apiUrl: "https://seafood-data.herokuapp.com"
+    apiUrl: "https://seafood-data.herokuapp.com/graphql"
   }
 };
 
