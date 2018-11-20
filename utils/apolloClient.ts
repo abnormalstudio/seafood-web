@@ -6,6 +6,7 @@ import { setContext } from "apollo-link-context";
 import { onError } from "apollo-link-error";
 import produce from "immer";
 import fetch from "isomorphic-unfetch";
+import { config } from "@settings";
 
 const cache = new InMemoryCache();
 
@@ -32,7 +33,7 @@ const authLink = setContext((_, oldContext) => {
 });
 
 const batchLink = new BatchHttpLink({
-  uri: "http://localhost:3000/graphql",
+  uri: config.apiUrl,
   fetch
 });
 

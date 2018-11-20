@@ -11,3 +11,24 @@ export const sizes = {
   mM: "20px",
   mL: "30px"
 };
+
+let env = "development";
+if (process.env.NODE_ENV === "production") {
+  env = "production";
+}
+
+const configs = {
+  development: {
+    apiUrl: "http://localhost:3000/graphql"
+  },
+  production: {
+    apiUrl: "https://seafood-data.herokuapp.com"
+  }
+};
+
+let config = configs.development;
+if (env === "production") {
+  config = configs.production;
+}
+
+export { config };
