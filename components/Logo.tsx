@@ -32,14 +32,14 @@ const JellyImage = styled("img")`
   width: 100%;
 `;
 const Dark = styled("div")`
-  color: ${colors.dark};
+  color: #542733;
   font-weight: bold;
   @media (max-width: 900px) {
     font-size: 0.85rem;
   }
 `;
-const Black = styled("div")`
-  color: ${colors.black};
+const Transparency = styled("div")`
+  color: #f17633;
   font-weight: bold;
   @media (max-width: 900px) {
     font-size: 0.85rem;
@@ -58,7 +58,7 @@ export default function Logo({ backgroundColor }: Props) {
       </ImageWrapper>
       <div>
         <Dark>THE SEAFOOD</Dark>
-        <Black>TRANSPARENCY</Black>
+        <Transparency>TRANSPARENCY</Transparency>
         <Dark>PROJECT</Dark>
       </div>
     </LogoWrapper>

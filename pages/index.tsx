@@ -6,12 +6,13 @@ import { SeafoodApp, Layout } from "@components";
 import { sizes, colors } from "@settings";
 
 const Wrapper = styled("div")`
-  background-image: url("/static/fish-background.jpg");
-  background-size: cover;
+  background-image: url("/static/fish-background.png");
+  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
   height: 100vh;
+  background-color: #f9eed3;
 `;
 
 const Form = styled("form")`
@@ -31,9 +32,10 @@ const Form = styled("form")`
     width: 100%;
     padding: ${sizes.mS};
     font-size: 1.2rem;
-    border: 1px solid ${colors.white};
-    background: none;
+    border: none;
+    background-color: #8c8e8b;
     text-transform: uppercase;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
     @media (max-width: 900px) {
       font-size: 1rem;
@@ -45,9 +47,8 @@ const Form = styled("form")`
 `;
 
 const Button = styled("button")`
-  background: none;
+  background-color: #542733;
   border: none;
-  border-left: 1px solid ${colors.white};
   height: 100%;
   width: 75px;
   text-align: center;

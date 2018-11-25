@@ -8,19 +8,21 @@ const NavTag = styled("nav")`
   top: 0px;
   bottom: 0px;
   width: 225px;
-  background-color: #f2c640;
+  background-color: #3289a3;
   z-index: 10;
 
   @media (max-width: 900px) {
     width: 100%;
     bottom: auto;
     height: 60px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 `;
 
 const Ul = styled("ul")`
   position: absolute;
-  bottom: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   padding: ${sizes.mM};
   width: 100%;
 
