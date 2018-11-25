@@ -9,6 +9,13 @@ const NavTag = styled("nav")`
   bottom: 0px;
   width: 225px;
   background-color: #f2c640;
+  z-index: 10;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    bottom: auto;
+    height: 60px;
+  }
 `;
 
 const Ul = styled("ul")`
@@ -16,6 +23,13 @@ const Ul = styled("ul")`
   bottom: 15px;
   padding: ${sizes.mM};
   width: 100%;
+
+  @media (max-width: 900px) {
+    display: flex;
+    justify-content: flex-end;
+    bottom: 0px;
+    padding: ${sizes.mS};
+  }
 `;
 
 const Li = styled("li")`
@@ -23,6 +37,13 @@ const Li = styled("li")`
   min-width: 175px;
   margin: 0 auto;
   margin-bottom: ${sizes.mM};
+
+  @media (max-width: 900px) {
+    width: 100px;
+    min-width: auto;
+    text-align: center;
+    margin: 0px;
+  }
 `;
 
 const NavA = styled("a")`
@@ -30,6 +51,10 @@ const NavA = styled("a")`
   color: ${colors.white};
   text-transform: uppercase;
   cursor: pointer;
+
+  @media (max-width: 900px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const NavImage = styled("img")`
@@ -60,14 +85,6 @@ export default function Nav({ navTop }: Props) {
             <NavA>
               <NavImage src="/static/about.svg" alt="About" />
               About
-            </NavA>
-          </Link>
-        </Li>
-        <Li>
-          <Link href="/our-work">
-            <NavA>
-              <NavImage src="/static/team.svg" alt="Our Work" />
-              Our Work
             </NavA>
           </Link>
         </Li>

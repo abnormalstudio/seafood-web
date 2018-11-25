@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { injectGlobal } from "emotion";
 import styled from "react-emotion";
+import Head from "next/head";
 import { Nav, Logo } from "@components";
 import { colors } from "@settings";
 
@@ -19,11 +20,19 @@ const Main = styled("main")`
   position: relative;
   width: 100%;
   margin-left: 225px;
+
+  @media (max-width: 900px) {
+    margin-left: 0px;
+    padding-top: 60px;
+  }
 `;
 
 export default function Layout({ children, navTop, backgroundColor }: Props) {
   return (
     <Container>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Nav navTop={navTop} />
       <Main>{children}</Main>
       <Logo backgroundColor={backgroundColor} />
@@ -39,7 +48,7 @@ del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+fieldset, form, label, legend, button,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
@@ -49,7 +58,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -95,6 +103,13 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
 	font-size: 2rem;
+	margin: 2rem 0px 0.5rem 0px;
+	text-align: center;
+}
+@media (max-width: 900px) {
+	h1 {
+		margin: 1rem 0px 0.5rem 0px;
+	}
 }
 h2 {
 	font-size: 1.5rem;

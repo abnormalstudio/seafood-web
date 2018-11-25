@@ -9,6 +9,10 @@ const Header = styled("header")`
   width: 80%;
   position: relative;
   margin: ${sizes.mL} auto;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 const H1 = styled("h1")`
@@ -21,7 +25,7 @@ const H1 = styled("h1")`
 
 const Line = styled("div")`
   position: absolute;
-  top: 50%;
+  top: calc(50% + 10px);
   height: 1px;
   width: 100%;
   background-color: ${colors.orange};

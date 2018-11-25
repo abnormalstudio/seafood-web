@@ -23,6 +23,12 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
+    server.get("/catch/:id/report", (req, res) => {
+      const actualPage = "/report";
+      const queryParams = { id: req.params.id };
+      app.render(req, res, actualPage, queryParams);
+    });
+
     server.get("*", (req, res) => {
       return handle(req, res);
     });

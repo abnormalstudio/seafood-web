@@ -8,27 +8,42 @@ const LogoWrapper = styled("div")`
   z-index: 10;
   display: flex;
   background-color: ${props => props.backgroundColor || "transparent"};
+
+  @media (max-width: 900px) {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: auto;
+    background-color: transparent;
+  }
 `;
 
 const ImageWrapper = styled("div")`
   width: 50px;
   margin-right: 15px;
+
+  @media (max-width: 900px) {
+    margin-right: 10px;
+    width: 35px;
+  }
 `;
 
 const JellyImage = styled("img")`
   width: 100%;
 `;
-
-const Text = styled("div")``;
-
 const Dark = styled("div")`
   color: ${colors.dark};
   font-weight: bold;
+  @media (max-width: 900px) {
+    font-size: 0.85rem;
+  }
 `;
-
 const Black = styled("div")`
   color: ${colors.black};
   font-weight: bold;
+  @media (max-width: 900px) {
+    font-size: 0.85rem;
+  }
 `;
 
 type Props = {
@@ -41,11 +56,11 @@ export default function Logo({ backgroundColor }: Props) {
       <ImageWrapper>
         <JellyImage src="/static/jellyfish.svg" alt="Jelly Fish" />
       </ImageWrapper>
-      <Text>
+      <div>
         <Dark>THE SEAFOOD</Dark>
         <Black>TRANSPARENCY</Black>
         <Dark>PROJECT</Dark>
-      </Text>
+      </div>
     </LogoWrapper>
   );
 }

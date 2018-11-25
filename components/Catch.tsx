@@ -27,6 +27,10 @@ const SplitBox = styled("div")`
   margin: 0 auto;
   margin-bottom: ${sizes.mL};
   line-height: 1.7rem;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 const SplitStatBox = styled("div")`

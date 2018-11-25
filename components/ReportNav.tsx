@@ -1,7 +1,5 @@
 import styled from "react-emotion";
-import Link from "next/link";
 import { sizes, colors } from "@settings";
-import { AButton } from "@elements";
 
 type Props = {
   id: string;
@@ -16,8 +14,7 @@ const Container = styled("div")`
     display: flex;
     justify-content: space-between;
     padding: ${sizes.mS};
-    margin-top: 60px;
-    background-color: ${colors.white};
+    margin-top: 70px;
   }
 `;
 
@@ -38,20 +35,14 @@ const Code = styled("div")`
 
   @media (max-width: 900px) {
     color: ${colors.dark};
-    margin-bottom: 0px;
   }
 `;
 
-export default function CatchNav({ id }: Props) {
+export default function ReportNav({ id }: Props) {
   return (
     <Container>
       <FishImage src="/static/fish.svg" alt="Fish Image" />
       <Code>{id}</Code>
-      <div>
-        <Link as={`/catch/${id}/report`} href={`/report?id=${id}`}>
-          <AButton>REPORT ISSUE</AButton>
-        </Link>
-      </div>
     </Container>
   );
 }

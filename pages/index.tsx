@@ -22,6 +22,10 @@ const Form = styled("form")`
   transform: translateX(-50%);
   display: flex;
 
+  @media (max-width: 900px) {
+    width: 80%;
+  }
+
   input {
     color: ${colors.white};
     width: 100%;
@@ -30,6 +34,10 @@ const Form = styled("form")`
     border: 1px solid ${colors.white};
     background: none;
     text-transform: uppercase;
+
+    @media (max-width: 900px) {
+      font-size: 1rem;
+    }
   }
   input::placeholder {
     color: ${colors.white};
