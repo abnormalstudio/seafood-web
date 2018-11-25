@@ -92,9 +92,13 @@ injectGlobal`
 
 body {
 	font-size: 18px;
-	font-family: 'Fira Sans Condensed', sans-serif;
 	background-color: ${colors.white};
 	color: ${colors.dark};
+	background-color: #f9eed3;
+}
+
+body, input, textarea, button {
+	font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {

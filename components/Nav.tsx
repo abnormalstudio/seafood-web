@@ -8,7 +8,7 @@ const NavTag = styled("nav")`
   top: 0px;
   bottom: 0px;
   width: 225px;
-  background-color: #3289a3;
+  background-color: #11a3ce;
   z-index: 10;
 
   @media (max-width: 900px) {

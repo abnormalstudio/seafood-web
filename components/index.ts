@@ -10,3 +10,4 @@ export { default as CatchHeader } from "./CatchHeader";
 export { default as CatchNav } from "./CatchNav";
 export { default as ReportIssue } from "./ReportIssue";
 export { default as ReportNav } from "./ReportNav";
+export { default as MiddleText } from "./MiddleText";

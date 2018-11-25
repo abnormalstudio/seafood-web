@@ -12,7 +12,6 @@ const Wrapper = styled("div")`
   background-position: center;
   width: 100%;
   height: 100vh;
-  background-color: #f9eed3;
 `;
 
 const Form = styled("form")`
@@ -31,6 +30,7 @@ const Form = styled("form")`
     color: ${colors.white};
     width: 100%;
     padding: ${sizes.mS};
+    padding-left: ${sizes.mM};
     font-size: 1.2rem;
     border: none;
     background-color: #8c8e8b;
@@ -58,6 +58,7 @@ const Button = styled("button")`
 `;
 
 const SearchImage = styled("img")`
+  padding-top: 5px;
   width: 25px;
 `;
 

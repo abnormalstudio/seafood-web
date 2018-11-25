@@ -43,6 +43,8 @@ export interface ICatch {
   longitude: number;
   caughtOn: string;
   location: string;
+  vessel: string;
+  preservationMethod: string;
   fish: IFish;
   fishery: IFishery;
   scans: {

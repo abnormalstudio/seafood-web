@@ -44,7 +44,16 @@ const MapContainer = styled("div")`
 `;
 
 export default function Catch({ catchData }: Props) {
-  const { location, fish, latitude, longitude, caughtOn, fishery } = catchData;
+  const {
+    location,
+    fish,
+    latitude,
+    longitude,
+    caughtOn,
+    fishery,
+    vessel,
+    preservationMethod
+  } = catchData;
   const scans = catchData.scans.edges.map(edge => edge.node);
   const nutrients = fish.nutrients.edges.map(edge => edge.node);
   return (
@@ -80,6 +89,17 @@ export default function Catch({ catchData }: Props) {
             <br />
             {fishery.address}
           </Centered>
+        </SplitStatBox>
+      </SplitBox>
+
+      <SplitBox>
+        <SplitStatBox>
+          VESSEL
+          <Centered>{vessel}</Centered>
+        </SplitStatBox>
+        <SplitStatBox>
+          PRESERVATION
+          <Centered>{preservationMethod}</Centered>
         </SplitStatBox>
       </SplitBox>
 

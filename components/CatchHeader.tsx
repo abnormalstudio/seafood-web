@@ -19,7 +19,7 @@ const H1 = styled("h1")`
   display: inline-block;
   border: 1px solid ${colors.orange};
   padding: 15px;
-  background: ${colors.white};
+  background: #f9eed3;
   position: relative;
 `;
 

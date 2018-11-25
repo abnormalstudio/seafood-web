@@ -76,7 +76,7 @@ function ReportIssue({ id, reportCreate }: InnerProps) {
             <Label htmlFor="name">Name</Label>
             <Input
               id="name"
-              ref={nameEl}
+              innerRef={nameEl}
               type="text"
               placeholder="Your name"
               required
@@ -87,7 +87,7 @@ function ReportIssue({ id, reportCreate }: InnerProps) {
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
-              ref={emailEl}
+              innerRef={emailEl}
               type="email"
               placeholder="Your email"
               required
@@ -98,7 +98,7 @@ function ReportIssue({ id, reportCreate }: InnerProps) {
             <Label htmlFor="phone">Phone</Label>
             <Input
               id="phone"
-              ref={phoneEl}
+              innerRef={phoneEl}
               type="text"
               placeholder="(555) 555-5555"
               required
@@ -109,7 +109,7 @@ function ReportIssue({ id, reportCreate }: InnerProps) {
             <Label htmlFor="issue">Issue</Label>
             <Textarea
               id="issue"
-              ref={issueEl}
+              innerRef={issueEl}
               placeholder="Describe the issue in detail"
               required
               rows={3}

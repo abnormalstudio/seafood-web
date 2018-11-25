@@ -8,6 +8,8 @@ const CatchQuery = gql`
       longitude
       caughtOn
       location
+      vessel
+      preservationMethod
       fish {
         id
         species

@@ -1,6 +1,13 @@
 import { withRouter } from "next/router";
 import { Query } from "react-apollo";
-import { SeafoodApp, Layout, ReportIssue, ReportNav } from "@components";
+import Head from "next/head";
+import {
+  SeafoodApp,
+  Layout,
+  ReportIssue,
+  ReportNav,
+  MiddleText
+} from "@components";
 import { CatchQuery } from "@queries";
 import { ICatch } from "@types";
 
@@ -26,7 +33,10 @@ export default withRouter(({ router }: Props) => (
         if (loading) {
           return (
             <Layout>
-              <span>Loading...</span>
+              <Head>
+                <title>Loading catch</title>
+              </Head>
+              <MiddleText text={`Loading catch ${router.query.id}`} />
             </Layout>
           );
         }
@@ -43,7 +53,10 @@ export default withRouter(({ router }: Props) => (
 
         return (
           <Layout>
-            <span>Error finding catch {router.query.id}</span>
+            <Head>
+              <title>Loading catch</title>
+            </Head>
+            <MiddleText text={`Loading catch ${router.query.id}`} />
           </Layout>
         );
       }}
