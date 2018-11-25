@@ -45,7 +45,7 @@ export default withRouter(({ router }: Props) => (
           const navTop = <ReportNav id={router.query.id} />;
 
           return (
-            <Layout navTop={navTop} backgroundColor="#FFF">
+            <Layout navTop={navTop} backgroundColor="#f9eed3">
               <ReportIssue id={router.query.id} />
             </Layout>
           );
