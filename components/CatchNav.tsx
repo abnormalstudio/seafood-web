@@ -17,7 +17,7 @@ const Container = styled("div")`
     justify-content: space-between;
     padding: ${sizes.mS};
     margin-top: 60px;
-    background-color: ${colors.white};
+    background-color: #f9eed3;
   }
 `;
 

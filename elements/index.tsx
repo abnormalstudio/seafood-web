@@ -22,7 +22,7 @@ export const Centered = styled("div")`
 export const Button = styled("button")`
   display: inline-block;
   padding: ${sizes.mS};
-  color: ${colors.green};
+  color: ${colors.orange};
   background-color: ${colors.black};
   text-decoration: none;
   font-weight: bold;

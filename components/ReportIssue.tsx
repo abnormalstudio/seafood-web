@@ -40,6 +40,8 @@ const Input = styled("input")`
   width: 100%;
   padding: ${sizes.mS};
   font-size: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border: none;
 `;
 const Textarea = Input.withComponent("textarea");
 

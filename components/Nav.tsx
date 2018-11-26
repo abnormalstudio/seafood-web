@@ -35,10 +35,10 @@ const Ul = styled("ul")`
 `;
 
 const Li = styled("li")`
-  width: 50%;
-  min-width: 175px;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: ${sizes.mM};
+  text-align: center;
 
   @media (max-width: 900px) {
     width: 100px;
